@@ -1,0 +1,20 @@
+import {
+    F as u
+} from "./CBs2huiX.js";
+import {
+    h as l
+} from "./Flj6v5Zy.js";
+let e = null;
+const c = () => {
+    const t = l(),
+        r = t.value.geoCountry;
+    return r && r !== "ZZ" ? Promise.resolve(r) : (e || (e = u.getGeoLocation().then(o => {
+        const n = o ? .country ? ? null;
+        return n && (t.value.geoCountry = n), n
+    }).catch(o => null).finally(() => {
+        e = null
+    })), e)
+};
+export {
+    c as e
+};
